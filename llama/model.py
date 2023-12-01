@@ -5,7 +5,7 @@ import math
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
-import fairscale.nn.model_parallel.initialize as fs_init
+import fairscale.nn.model_parallel.initialize as fs_initv
 import torch
 import torch.nn.functional as F
 from fairscale.nn.model_parallel.layers import (
@@ -19,7 +19,7 @@ from torch import nn
 @dataclass
 class ModelArgs:
     dim: int = 4096
-    n_layers: int = 32
+    n_layers: int = 100
     n_heads: int = 32
     n_kv_heads: Optional[int] = None
     vocab_size: int = -1  # defined later by tokenizer
